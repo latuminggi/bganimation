@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class=" -webkit-">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery &amp; CSS3 background</title>
+    <style media="">
+        button,
+        hr,
+        input {
+            overflow: visible
+        }
+
+        audio,
+        canvas,
+        progress,
+        video {
+            display: inline-block
+        }
+
+        progress,
+        sub,
+        sup {
+            vertical-align: baseline
+        }
+
+        html {
+            font-family: sans-serif;
+            line-height: 1.15;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%
+        }
+
+        body {
+            margin: 0
+        }
+
+        menu,
+        article,
+        aside,
+        details,
+        footer,
+        header,
+        nav,
+        section {
+            display: block
+        }
+
+        h1 {
+            font-size: 2em;
+            margin: .67em 0
+        }
+
+        figcaption,
+        figure,
+        main {
+            display: block
+        }
+
+        figure {
+            margin: 1em 40px
+        }
+
+        hr {
+            box-sizing: content-box;
+            height: 0
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em
+        }
+
+        a {
+            background-color: transparent;
+            -webkit-text-decoration-skip: objects
+        }
+
+        a:active,
+        a:hover {
+            outline-width: 0
+        }
+
+        abbr[title] {
+            border-bottom: none;
+            text-decoration: underline;
+            text-decoration: underline dotted
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        dfn {
+            font-style: italic
+        }
+
+        mark {
+            background-color: #ff0;
+            color: #000
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        audio:not([controls]) {
+            display: none;
+            height: 0
+        }
+
+        img {
+            border-style: none
+        }
+
+        svg:not(:root) {
+            overflow: hidden
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: sans-serif;
+            font-size: 100%;
+            line-height: 1.15;
+            margin: 0
+        }
+
+        button,
+        input {}
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        [type=submit],
+        [type=reset],
+        button,
+        html [type=button] {
+            -webkit-appearance: button
+        }
+
+        [type=button]::-moz-focus-inner,
+        [type=reset]::-moz-focus-inner,
+        [type=submit]::-moz-focus-inner,
+        button::-moz-focus-inner {
+            border-style: none;
+            padding: 0
+        }
+
+        [type=button]:-moz-focusring,
+        [type=reset]:-moz-focusring,
+        [type=submit]:-moz-focusring,
+        button:-moz-focusring {
+            outline: ButtonText dotted 1px
+        }
+
+        fieldset {
+            border: 1px solid silver;
+            margin: 0 2px;
+            padding: .35em .625em .75em
+        }
+
+        legend {
+            box-sizing: border-box;
+            color: inherit;
+            display: table;
+            max-width: 100%;
+            padding: 0;
+            white-space: normal
+        }
+
+        progress {}
+
+        textarea {
+            overflow: auto
+        }
+
+        [type=checkbox],
+        [type=radio] {
+            box-sizing: border-box;
+            padding: 0
+        }
+
+        [type=number]::-webkit-inner-spin-button,
+        [type=number]::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        [type=search]::-webkit-search-cancel-button,
+        [type=search]::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        [hidden],
+        template {
+            display: none
+        }
+    </style>
+    <style>
+        body,
+        html {
+            background: #007bff;
+            height: 100%;
+        }
+
+        h1 {
+            height: auto;
+            display: table;
+            width: 80%;
+            text-align: center;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            color: white;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            font-size: 3em;
+        }
+
+        h2 {
+            position: fixed;
+            text-align: center;
+            top: 10px;
+            right: 20px;
+            color: white;
+            font-size: 20px;
+            font-family: Roboto;
+            font-weight: normal;
+            z-index: 999;
+        }
+
+        h2 span {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+
+        h2 a {
+            color: white;
+            font-size: 15px;
+            padding: 0 30px;
+        }
+    </style>
+</head>
+<body translate="no">
+    <style>
+        .shape_background {
+            transform-origin: center;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            position: absolute
+        }
+    </style>
+    <style media="" data-href="//fonts.googleapis.com/css?family=Raleway:300">
+        /* cyrillic-ext */
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            /* src: url(//fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCFPrEHJA.woff2) format('woff2'); */
+            /* unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; */
+        }
+
+        /* cyrillic */
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            /* src: url(//fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCMPrEHJA.woff2) format('woff2'); */
+            /* unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; */
+        }
+
+        /* vietnamese */
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            /* src: url(//fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCHPrEHJA.woff2) format('woff2'); */
+            /* unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB; */
+        }
+
+        /* latin-ext */
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            /* src: url(//fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCGPrEHJA.woff2) format('woff2'); */
+            /* unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; */
+        }
+
+        /* latin */
+        @font-face {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 300;
+            /* src: url(//fonts.gstatic.com/s/raleway/v18/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVuEorCIPrE.woff2) format('woff2'); */
+            /* unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; */
+        }
+    </style>
+
+
+    <h1>Jquery &amp; CSS3 background</h1>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+    <script id="rendered-js">
+        var background = {};
+
+        background.initializr = function () {
+            var $this = this;
+
+            //option
+            $this.id = "background_css3";
+            $this.style = {
+                bubbles_color: "#fff",
+                stroke_width: 0,
+                stroke_color: "black"
+            };
+            $this.bubbles_number = 30;
+            $this.speed = [1500, 8000]; //milliseconds
+            $this.max_bubbles_height = $this.height;
+            $this.shape = false; // 1 : circle | 2 : triangle | 3 : rect | false :random
+
+            if ($("#" + $this.id).lenght > 0) {
+                $("#" + $this.id).remove();
+            }
+
+            $this.object = $(
+                "<div style='z-inde:-1;margin:0;padding:0; overflow:hidden;position:absolute;bottom:0' id='" +
+                $this.id + "'> </div>'").appendTo("body");
+
+            $this.ww = $(window).width();
+            $this.wh = $(window).height();
+            $this.width = $this.object.width($this.ww);
+            $this.height = $this.object.height($this.wh);
+
+            $("body").prepend(
+                "<style>.shape_background {transform-origin:center; width:80px; height:80px; background: " +
+                $this.style.bubbles_color + "; position: absolute}</style>");
+
+
+            for (i = 0; i < $this.bubbles_number; i++) {
+                // if (window.CP.shouldStopExecution(0)) break;
+                $this.generate_bubbles();
+            }
+            // window.CP.exitedLoop(0);
+        };
+
+        background.generate_bubbles = function () {
+            var $this = this;
+            var base = $("<div class='shape_background'></div>");
+            var shape_type = $this.shape ? $this.shape : Math.floor($this.rn(1, 3));
+            if (shape_type == 1) {
+                var bolla = base.css({
+                    borderRadius: "50%"
+                });
+            } else if (shape_type == 2) {
+                var bolla = base.css({
+                    width: 0,
+                    height: 0,
+                    "border-style": "solid",
+                    "border-width": "0 40px 69.3px 40px",
+                    "border-color": "transparent transparent " + $this.style.bubbles_color + " transparent",
+                    background: "transparent"
+                });
+            } else {
+                var bolla = base;
+            }
+            var rn_size = $this.rn(.8, 1.2);
+            bolla.css({
+                "transform": "scale(" + rn_size + ") rotate(" + $this.rn(-360, 360) + "deg)",
+                top: $this.wh + 100,
+                left: $this.rn(-60, $this.ww + 60)
+            });
+            bolla.appendTo($this.object);
+            bolla.transit({
+                top: $this.rn($this.wh / 2, $this.wh / 2 - 60),
+                "transform": "scale(" + rn_size + ") rotate(" + $this.rn(-360, 360) + "deg)",
+                opacity: 0
+            }, $this.rn($this.speed[0], $this.speed[1]), function () {
+                $(this).remove();
+                $this.generate_bubbles();
+            });
+
+        };
+
+        background.rn = function (from, to, arr) {
+            if (arr) {
+                return Math.random() * (to - from + 1) + from;
+            } else {
+                return Math.floor(Math.random() * (to - from + 1) + from);
+            }
+        };
+        background.initializr();
+    </script>
+
+    <div style="margin: 0px; padding: 0px; overflow: hidden; position: absolute; bottom: 0px; width: 1366px; height: 195px;"
+        id="background_css3">
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(203deg); top: 96px; left: 664px; transition: top 7324ms ease 0s, transform 7324ms ease 0s, opacity 7324ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(0, 0) rotate(-18deg); top: 80px; left: 997px; transition: top 7912ms ease 0s, transform 7912ms ease 0s, opacity 7912ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(0, 0) rotate(-64deg); top: 71px; left: 478px; transition: top 6720ms ease 0s, transform 6720ms ease 0s, opacity 6720ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(1, 1) rotate(-99deg); top: 95px; left: 354px; transition: top 6896ms ease 0s, transform 6896ms ease 0s, opacity 6896ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(1, 1) rotate(346deg); top: 83px; left: 411px; transition: top 7979ms ease 0s, transform 7979ms ease 0s, opacity 7979ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(1, 1) rotate(354deg); top: 95px; left: 193px; transition: top 5602ms ease 0s, transform 5602ms ease 0s, opacity 5602ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(136deg); top: 64px; left: 227px; transition: top 7182ms ease 0s, transform 7182ms ease 0s, opacity 7182ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(1, 1) rotate(-177deg); top: 57px; left: 529px; transition: top 6183ms ease 0s, transform 6183ms ease 0s, opacity 6183ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(1, 1) rotate(229deg); top: 65px; left: 251px; transition: top 3831ms ease 0s, transform 3831ms ease 0s, opacity 3831ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(41deg); top: 75px; left: 1196px; transition: top 5189ms ease 0s, transform 5189ms ease 0s, opacity 5189ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(124deg); top: 93px; left: 160px; transition: top 5832ms ease 0s, transform 5832ms ease 0s, opacity 5832ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(74deg); top: 42px; left: 970px; transition: top 3735ms ease 0s, transform 3735ms ease 0s, opacity 3735ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(2, 2) rotate(29deg); top: 87px; left: 1107px; transition: top 4002ms ease 0s, transform 4002ms ease 0s, opacity 4002ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(214deg); top: 68px; left: 1225px; transition: top 3041ms ease 0s, transform 3041ms ease 0s, opacity 3041ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(0, 0) rotate(-320deg); top: 66px; left: 686px; transition: top 5719ms ease 0s, transform 5719ms ease 0s, opacity 5719ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(1, 1) rotate(-265deg); top: 87px; left: 1037px; transition: top 3774ms ease 0s, transform 3774ms ease 0s, opacity 3774ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(-311deg); top: 87px; left: 1053px; transition: top 1948ms ease 0s, transform 1948ms ease 0s, opacity 1948ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(0, 0) rotate(-36deg); top: 87px; left: 500px; transition: top 5240ms ease 0s, transform 5240ms ease 0s, opacity 5240ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(0, 0) rotate(188deg); top: 69px; left: 351px; transition: top 2803ms ease 0s, transform 2803ms ease 0s, opacity 2803ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(1, 1) rotate(139deg); top: 40px; left: 1285px; transition: top 4295ms ease 0s, transform 4295ms ease 0s, opacity 4295ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(0, 0) rotate(7deg); top: 46px; left: 1101px; transition: top 3176ms ease 0s, transform 3176ms ease 0s, opacity 3176ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(0, 0) rotate(354deg); top: 65px; left: 25px; transition: top 3817ms ease 0s, transform 3817ms ease 0s, opacity 3817ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(1, 1) rotate(-97deg); top: 48px; left: 143px; transition: top 4485ms ease 0s, transform 4485ms ease 0s, opacity 4485ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(1, 1) rotate(119deg); top: 55px; left: 952px; transition: top 7284ms ease 0s, transform 7284ms ease 0s, opacity 7284ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(1, 1) rotate(-190deg); top: 88px; left: 1171px; transition: top 4374ms ease 0s, transform 4374ms ease 0s, opacity 4374ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(1, 1) rotate(259deg); top: 41px; left: 931px; transition: top 6797ms ease 0s, transform 6797ms ease 0s, opacity 6797ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(0, 0) rotate(2deg); top: 79px; left: 580px; transition: top 4613ms ease 0s, transform 4613ms ease 0s, opacity 4613ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="border-radius: 50%; transform: scale(2, 2) rotate(261deg); top: 54px; left: 608px; transition: top 3346ms ease 0s, transform 3346ms ease 0s, opacity 3346ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="width: 0px; height: 0px; border-style: solid; border-width: 0px 40px 69.3px; border-color: transparent transparent rgb(255, 255, 255); background: transparent; transform: scale(0, 0) rotate(295deg); top: 79px; left: 71px; transition: top 6246ms ease 0s, transform 6246ms ease 0s, opacity 6246ms ease 0s; opacity: 0;">
+        </div>
+        <div class="shape_background"
+            style="transform: scale(2, 2) rotate(205deg); top: 69px; left: 369px; transition: top 7430ms ease 0s, transform 7430ms ease 0s, opacity 7430ms ease 0s; opacity: 0;">
+        </div>
+    </div>
+</body>
+</html>
